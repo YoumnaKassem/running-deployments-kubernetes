@@ -101,13 +101,13 @@ version: 2.1
 workflows:
   deployment:
     jobs:
-      - create-small-cluster:
-          cluster-name: prod-team-cluster
+      # - create-small-cluster:
+          # cluster-name: prod-team-cluster
       - lint-app
       - builddocker:
           requires:
             - lint-app
       - create-deployment:
           cluster-name: prod-team-cluster
-          requires:
-            - create-small-cluster
+          # requires:
+            # - create-small-cluster
